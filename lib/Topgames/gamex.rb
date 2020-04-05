@@ -1,13 +1,27 @@
 class  Topgames::Gamex
 attr_accessor :rank, :name, :release, :discription
 
-    def self.all
-self.scrape_games
-    end
+def self.all
+    self.scrape_games
+end
+
 def self.scrape_games
-  game = [] 
+  games = [] 
+
+  games << self.scrape_g1
+
   games
 end
+
+
+
+def self.scrape_g1
+  doc = Nokogiri::HTML(open("www.gamedesigning.org/popular-video-games" ))
+
+  puts "if i see this noko is messing up"
+    binding.pry
+  end 
+
 end
       
 
