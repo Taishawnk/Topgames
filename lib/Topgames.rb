@@ -1,3 +1,4 @@
+require "nokogiri"
 require  "pry"
 require  "uri"
 require_relative "Topgames/version"

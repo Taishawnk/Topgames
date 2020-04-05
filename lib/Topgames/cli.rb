@@ -25,14 +25,14 @@ def menu
         input = nil
         while input != "exit"
             puts "Enter the rank of the game you would like more info on from 1-20"
-          input =gets.strip.downcase
+          input = gets.strip.downcase
 
           if input.to_i > 0
             top_game = @game [input.to_i-1]
             puts "#{top_game.rank} - #{top_game.name} - #{top_game.release} " 
             
             puts " #{top_game.discription} "
-
+            
           elsif input == "list"
             games_list
           else
