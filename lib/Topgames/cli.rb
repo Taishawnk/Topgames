@@ -10,13 +10,14 @@ def call
     end
 
 def games_list
-
-        puts "--------------------------------------"
-        puts "- Here is a list of the Top 20 games -"
-        puts "--------------------------------------"
+        puts "---------------------------------------"
+        puts "- Here is a list of 30 must play games-"
+        puts "--------Type list to see full list-----" 
+        puts "------------Type exit to exit----------"
+        puts "---------------------------------------"
         @game = Topgames::Gamex.all
         @game.each.with_index(1) do |games, i|
-            puts "#{i}. #{games.rank} - #{games.name} - #{games.release} "
+            puts "#{i}.#{games.name} - #{games.release} "
         end
     end
 
@@ -24,14 +25,15 @@ def menu
 
         input = nil
         while input != "exit"
-            puts "Enter the rank of the game you would like more info on from 1-20"
+            puts "Enter the number for the game you would like more info on from 1-30"
+         
           input = gets.strip.downcase
 
           if input.to_i > 0
             top_game = @game [input.to_i-1]
-            puts "#{top_game.rank} - #{top_game.name} - #{top_game.release} " 
-            
-            puts " #{top_game.discription} "
+            puts "#{top_game.name} - #{top_game.release} " 
+            puts "#{top_game.discription} "
+            puts "For more info fallow the link ---- #{top_game.more}"
             
           elsif input == "list"
             games_list
@@ -49,4 +51,4 @@ def goodbye
 
 end
 
-#gooooooo back to 44min on video
+
