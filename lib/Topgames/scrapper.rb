@@ -1,5 +1,5 @@
 
-Topgames::Scrapper
+class Topgames::Scrapper
 def game
     url = "https://www.cnet.com/pictures/best-games-on-ps4/2/"
     
@@ -24,7 +24,7 @@ def game
   
     binding.pry
     end
-    
+  end
     end 
 
 
@@ -64,7 +64,7 @@ def game
 
 ## ***********
 
- "Finished running code"
+
 # This line stops us seeing the sometimes very long return values of Nokogiri. Feel free to uncomment it if you don't want it.
 
     #  building.transport = doc.css("section#transportation ul li.transportation").map{|li| li.css("div").text}
